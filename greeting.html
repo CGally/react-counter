@@ -5,6 +5,7 @@
   </head>
   <body>
      <div id="app"></div>
+     <div id='btn'></div>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
@@ -21,6 +22,27 @@
         ReactDOM.render(
           <Greeting />, document.getElementById('app')
         );
+     </script>
+     <script type="text/babel">
+        class Button extends React.Component {
+          render() {
+            return (
+              <div>
+                <button>Goodbye World!</button>
+              </div>
+            );
+          }
+        }
+        ReactDOM.render(
+          <Button />, document.getElementById('btn')
+        );
+     </script>
+     <script>
+     document.getElementById('btn').addEventListener('click', removeApp);
+     function removeApp() {
+       var elem = document.getElementById('app');
+       elem.parentNode.removeChild(elem);
+     }
      </script>
   </body>
 </html>
